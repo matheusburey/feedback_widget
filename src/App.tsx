@@ -1,9 +1,9 @@
-import { WidgetButton } from "./components";
+import { WidgetButton } from "./components/WidgetButton";
 
-export const App = () => {
+export function App() {
   return (
     <div>
       <WidgetButton />
     </div>
   );
-};
+}
