@@ -1,28 +1,60 @@
-import { useState } from "react"
-import { WidgetCloseButton } from "../WidgetCloseButton";
+import { useState } from "react";
+import { FeedbackContentSteps } from "./Steps/FeedbackContentStep";
 import { FeedbackTypeStep } from "./Steps/FeedbackTypeStep";
 
+import bugImgUrl from "../../assets/bug.svg";
+import ideaImgUrl from "../../assets/idea.svg";
+import thoughtImgUrl from "../../assets/thought.svg";
+
+export const feedbackTypes = {
+  BUG: {
+    title: "Problema",
+    img: {
+      source: bugImgUrl,
+      alt: "Imagen de um inseto",
+    },
+  },
+  IDEA: {
+    title: "Ideia",
+    img: {
+      source: ideaImgUrl,
+      alt: "Imagen de uma lampada",
+    },
+  },
+  OTHER: {
+    title: "Outro",
+    img: {
+      source: thoughtImgUrl,
+      alt: "Imagen de um balão de pensamento",
+    },
+  },
+};
+
+export type FeedbackType = keyof typeof feedbackTypes;
+
 export const WidgetForm = () => {
-  const [feedbackType, setFeedbackType] = useState<string | null>(null);
+  const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
+
+  const handleRestartFeedback = () => {
+    setFeedbackType(null)
+  }
+
   return (
     <div className="bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto">
-      <header>
-        <span className="text-xl leading-6">
-          Deixe seu feedback
-          <WidgetCloseButton />
-        </span>
-      </header>
       {!feedbackType ? (
         <FeedbackTypeStep setFeedbackType={setFeedbackType} />
-      ) : (
-        <p>helloword</p>
+        ) : (
+          <FeedbackContentSteps 
+            feedbackType={feedbackType}
+            handleRestartFeedback={handleRestartFeedback}
+          />
       )}
       <footer className="text-xs text-neutral-400">
-        Feito com ♥  pela {" "}
+        Feito com ♥ pela{" "}
         <a className="underline underline-offset-2" href="#">
           Rockteseat
         </a>
       </footer>
     </div>
-  );
+    );
 };
