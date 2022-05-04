@@ -1,9 +1,9 @@
-const App = () => {
+import { WidgetButton } from "./components";
+
+export const App = () => {
   return (
     <div>
-			hello Word!!
+      <WidgetButton />
     </div>
-  )
-}
-
-export default App
+  );
+};
