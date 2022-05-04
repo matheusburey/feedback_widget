@@ -1,3 +1,3 @@
-export const FeedbackSuccessStep = () => {
-  return <div></div>;
-};
+export function FeedbackSuccessStep() {
+  return <div />;
+}
