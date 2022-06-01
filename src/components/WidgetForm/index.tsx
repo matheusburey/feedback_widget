@@ -45,16 +45,16 @@ export function WidgetForm() {
   return (
     <div className="bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto">
       {feedbackSend ? (
-        <FeedbackSuccessStep handleRestartFeedback={handleRestartFeedback}/>
+        <FeedbackSuccessStep handleRestartFeedback={handleRestartFeedback} />
       ) : (!feedbackType ? (
-            <FeedbackTypeStep setFeedbackType={setFeedbackType} />
-          ) : (
-            <FeedbackContentSteps
-              feedbackType={feedbackType}
-              handleRestartFeedback={handleRestartFeedback}
-              setFeedbackSend={setFeedbackSend}
-            />
-          )
+        <FeedbackTypeStep setFeedbackType={setFeedbackType} />
+      ) : (
+        <FeedbackContentSteps
+          feedbackType={feedbackType}
+          handleRestartFeedback={handleRestartFeedback}
+          setFeedbackSend={setFeedbackSend}
+        />
+      )
       )}
       <footer className="text-xs text-neutral-400">
         Feito com ♥ pela{" "}

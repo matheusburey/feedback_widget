@@ -15,14 +15,14 @@ export function ScreenshotButton({ setScreenshot, screenshot }: ScreenshotButton
     setIsTakingScreenshot(true);
     const canvas = await html2canvas(document.querySelector("html")!);
     const base64image = canvas.toDataURL("image/png");
-    setScreenshot(base64image)
+    setScreenshot(base64image);
     setIsTakingScreenshot(false);
   };
 
-  if (screenshot){
-    return(
-    <button
-      type="button"
+  if (screenshot) {
+    return (
+      <button
+        type="button"
         className="p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors"
         onClick={() => setScreenshot(null)}
         style={{
@@ -31,7 +31,7 @@ export function ScreenshotButton({ setScreenshot, screenshot }: ScreenshotButton
           backgroundSize: 100
         }}
       >
-        <Trash weight="fill"  />
+        <Trash weight="fill" />
       </button>
     )
   }
