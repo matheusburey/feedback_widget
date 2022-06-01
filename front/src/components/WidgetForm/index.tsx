@@ -31,10 +31,10 @@ export const feedbackTypes = {
   },
 };
 
-export type FeedbackType = keyof typeof feedbackTypes;
+export type FeedbackTypes = keyof typeof feedbackTypes;
 
 export function WidgetForm() {
-  const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
+  const [feedbackType, setFeedbackType] = useState<FeedbackTypes | null>(null);
   const [feedbackSend, setFeedbackSend] = useState(false);
 
   const handleRestartFeedback = () => {
@@ -57,9 +57,9 @@ export function WidgetForm() {
       )
       )}
       <footer className="text-xs text-neutral-400">
-        Feito com ♥ pela{" "}
-        <a className="underline underline-offset-2" href="https://google.com">
-          Rockteseat
+        Feito com ♥ por{" "}
+        <a className="underline underline-offset-2" href="https://www.linkedin.com/in/matheus-h-burei/">
+          Mateus H Burey
         </a>
       </footer>
     </div>
