@@ -1,7 +1,7 @@
 import { ArrowLeft } from "phosphor-react";
 import { FormEvent, useState } from "react";
 
-import { FeedbackType, feedbackTypes } from "..";
+import { FeedbackTypes, feedbackTypes } from "..";
 import api from "../../../service/api";
 import { Loading } from "../../Loading";
 
@@ -9,7 +9,7 @@ import { WidgetCloseButton } from "../../WidgetCloseButton";
 import { ScreenshotButton } from "../ScreenshotButton";
 
 interface IFeedbackContentProps {
-  feedbackType: FeedbackType;
+  feedbackType: FeedbackTypes;
   handleRestartFeedback: () => void;
   setFeedbackSend: (type: true) => void;
 }
